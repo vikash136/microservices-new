@@ -6,10 +6,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 
 @Repository
 public interface InventoryRepository extends JpaRepository< Inventory,Long > {
-    @Query("select i from Inventory i where i.skuCode = ?1")
-    Optional<Inventory> findBySkuCode();
+//    @Query("select i from Inventory i where i.skuCode = ?1")
+//    Optional<Inventory> findBySkuCode();
+
+  List<Inventory> findBySkuCodeIn(List< String> skuCode);
 }

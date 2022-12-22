@@ -12,12 +12,20 @@
         <module name="inventory-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="discovery-server" target="17" />
+      <module name="DiscoveryRegistry" target="17" />
+      <module name="server-discovery" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="DiscoveryRegistry" options="-parameters" />
+      <module name="discovery-server" options="-parameters" />
       <module name="inventory-service" options="-parameters" />
       <module name="order-service" options="-parameters" />
       <module name="product-service" options="-parameters" />
+      <module name="server-discovery" options="-parameters" />
     </option>
   </component>
 </project>
